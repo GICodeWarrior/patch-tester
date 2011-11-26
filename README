@@ -20,6 +20,13 @@ end; 1
 
 Currently, the only interesting code is under "extras/".
 
+Basically I fetch pages with curb(libcurl) and pull out what I need with 
+nokogiri(libxml2) and some css selectors.  Then I take each patch and attempt an 
+exhaustive search (after trying the easy cases) to see if it will apply.
+
+I started with the Bugzilla API, but it was pretty annoying so I took the "easy" 
+route.
+
 == Note on Patches/Pull Requests
 * Fork the project.
 * Make your feature addition or bug fix.
