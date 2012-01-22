@@ -16,7 +16,7 @@ module Bugzilla
       request_url = @url.clone
       request_url.path = path
       request_url.query = params.map do |key, value|
-        "#{Rack::Utils.escape(key)}=#{Rack::Utils.escape(value)}"
+        "#{CGI.escape(key.to_s)}=#{CGI.escape(value.to_s)}"
       end.join('&')
 
       curl = Curl::Easy.http_get(request_url.to_s) do |config|
