@@ -14,4 +14,7 @@ Gem::Specification.new do |s|
 
   s.files        = Dir.glob("{bin,lib}/**/*") + %w(LICENSE README)
   s.require_path = 'lib'
+
+  s.add_dependency('curb')
+  s.add_dependency('nokogiri')
 end

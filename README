@@ -4,9 +4,9 @@ Everything here is released under the MIT license.  See LICENSE for details.
 
 Be sure to run "bundle install" so you get all the required gems.
 
-Here is some code you can paste into "rails console" to test all the active
-patches for MediaWiki core against a checkout of trunk/phase3 in /tmp/mw (this
-code won't hurt the checkout but no warranties, etc.).
+Here is some code you can paste into "irb -rrubygems -rbugzilla" to test all
+the active patches for MediaWiki core against a checkout of trunk/phase3 in
+/tmp/mw (this code won't hurt the checkout but no warranties, etc.).
 
 # Test all the active patches for MediaWiki core
 s = Bugzilla::Site.new('https://bugzilla.wikimedia.org/')
@@ -18,14 +18,12 @@ bugs.each do |bug|
   end
 end; 1
 
-Currently, the only interesting code is under "extras/".
+Basically I fetch pages with curb(libcurl) and pull out what I need with
+nokogiri(libxml2) and some css selectors.  Then I take each patch and attempt
+an exhaustive search (after trying the easy cases) to see if it will apply.
 
-Basically I fetch pages with curb(libcurl) and pull out what I need with 
-nokogiri(libxml2) and some css selectors.  Then I take each patch and attempt an 
-exhaustive search (after trying the easy cases) to see if it will apply.
-
-I started with the Bugzilla API, but it was pretty annoying so I took the "easy" 
-route.
+I started with the Bugzilla API, but it was pretty annoying so I took the
+"easy" route.
 
 == Note on Patches/Pull Requests
 * Fork the project.

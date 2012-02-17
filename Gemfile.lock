@@ -1,28 +1,18 @@
+PATH
+  remote: .
+  specs:
+    patch-tester (0.9)
+      curb
+      nokogiri
+
 GEM
   remote: http://rubygems.org/
   specs:
-    activesupport (3.1.0)
-      multi_json (~> 1.0)
-    columnize (0.3.4)
-    curb (0.7.16)
-    json (1.6.1)
-    linecache (0.46)
-      rbx-require-relative (> 0.0.4)
-    multi_json (1.0.3)
+    curb (0.8.0)
     nokogiri (1.5.0)
-    rbx-require-relative (0.0.5)
-    ruby-debug (0.10.4)
-      columnize (>= 0.1)
-      ruby-debug-base (~> 0.10.4.0)
-    ruby-debug-base (0.10.4)
-      linecache (>= 0.3)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  activesupport
-  curb
-  json
-  nokogiri
-  ruby-debug
+  patch-tester!
